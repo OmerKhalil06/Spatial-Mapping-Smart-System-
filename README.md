@@ -34,13 +34,15 @@ ARM Cortex-M4F (TI TM4C1294) · I2C · UART · GPIO register-level programming �
 **Software**
 C (bare-metal) · Keil µVision · MATLAB · Git
 
-## My Contributions ⭐
-- Wrote the full firmware — button handling, scan sequencing, arm/disarm state machine
-- Ported ST's VL53L1X sensor driver onto the TM4C1294's I2C peripheral
+## My Contributions
+- Wrote the full firmware — button handling, scan sequencing, arm/disarm state machine (`2dx_studio_8.c`)
+- Built the I2C porting layer connecting ST's VL53L1X driver to the TM4C1294's I2C peripheral (`vl53l1_platform_2dx4.c/.h`)
 - Designed the UART protocol streaming scan data to MATLAB
-- Built the MATLAB-side coordinate conversion (polar → Cartesian) and live 3D plotting
+- Wrote the MATLAB-side coordinate conversion (polar → Cartesian) and live 3D plotting script
 - Diagnosed the system's speed bottleneck through direct measurement, and verified timing against an oscilloscope
 - Validated the full system against a real physical space
+
+Not my own work: `PLL.c/.h`, `SysTick.c/.h`, `uart.c/.h`, and `onboardLEDs.c/.h` were provided as COMPENG 2DX3 course starter code. `VL53L1X_api.c/.h`, `vl53l1_types.h`, and `vl53l1_platform.h` are ST's official (unmodified) VL53L1X driver. `CMSIS/` and `Device/` are TI/ARM vendor files required to build the project.
 
 ## Design / Architecture
 <img width="1428" height="629" alt="circuit_schematic" src="https://github.com/user-attachments/assets/b60f050e-fc7c-4781-92ff-ba911014a040" />
@@ -87,3 +89,20 @@ Status LEDs               Distance Reading
 - 📄 [Full technical report](https://github.com/user-attachments/files/31766131/khalio9_2DX3_Final_Report_Project.pdf)
 - 🖥️ Firmware: this repository
 - 📸 More photos: `images/`
+<p align="center">
+  <img width="607" height="455" alt="campus_location_photo" src="https://github.com/user-attachments/assets/01eb6a9d-c13a-40a5-8b15-eba441e678df" />
+  <br>
+  <em>A second campus hallway used for validation</em>
+</p>
+
+<p align="center">
+  <img width="516" height="419" alt="campus_location_scan" src="https://github.com/user-attachments/assets/bfb957b9-f86d-4e3d-865c-58651ac13646" />
+  <br>
+  <em>Reconstructed 3D scan of the same hallway</em>
+</p>
+
+<p align="center">
+  <img width="490" height="416" alt="matlab_single_scan" src="https://github.com/user-attachments/assets/0a86da2b-755c-45c6-a6a5-5b3172effd22" />
+  <br>
+  <em>A single 360° scan slice before combining into the full point cloud</em>
+</p>

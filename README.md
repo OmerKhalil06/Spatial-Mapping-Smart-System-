@@ -35,7 +35,7 @@ ARM Cortex-M4F (TI TM4C1294) · I2C · UART · GPIO register-level programming �
 C (bare-metal) · Keil µVision · MATLAB · Git
 
 ## My Contributions
-- Wrote the full firmware — button handling, scan sequencing, arm/disarm state machine (`2dx_studio_8.c`)
+- Wrote the full firmware — button handling, scan sequencing, arm/disarm state machine (`Final_Spatial_Mapping_2dx3.c`)
 - Built the I2C porting layer connecting ST's VL53L1X driver to the TM4C1294's I2C peripheral (`vl53l1_platform_2dx4.c/.h`)
 - Designed the UART protocol streaming scan data to MATLAB
 - Wrote the MATLAB-side coordinate conversion (polar → Cartesian) and live 3D plotting script

@@ -48,21 +48,6 @@ Not my own work: `PLL.c/.h`, `SysTick.c/.h`, `uart.c/.h`, and `onboardLEDs.c/.h`
 <img width="1428" height="629" alt="circuit_schematic" src="https://github.com/user-attachments/assets/b60f050e-fc7c-4781-92ff-ba911014a040" />
 
 
-```
-[Buttons] → Arm / Trigger scan
-     |
-     v
-Stepper Motor --11.25° step--> ToF Sensor (I2C)
-     |                              |
-     v                              v
-Status LEDs               Distance Reading
-     |                              |
-     +---------> UART ------------->+
-                   |
-                   v
-      MATLAB: polar → Cartesian → 3D plot
-```
-
 ## Results
 - 32 readings per 360° scan, 11.25° resolution
 - ~52–55 s per scan position (motor stepping is the bottleneck — measured, not guessed)
